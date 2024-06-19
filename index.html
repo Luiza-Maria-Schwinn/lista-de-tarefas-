@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Layout Dinâmico</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <div class="menu">
+            <img src="./images/foto-de-perfil.jpg" alt="Foto perfil">
+            <h2>Lorem Ipsum</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Temporibus, adipisci fugiat.</p>
+            <ul>
+                <li><a href="#" id="linkAddDay">Adicionar tarefa ao dia</a></li>
+                <li><a href="#" id="linkAddNight">Adicionar tarefa à noite</a></li>
+                <li><a href="#" id="btnDeleteTasks">Remover todos os registros</a></li>
+                <li><a href="#" id="btnSendFeedback">Dúvias/Melhoramento</a></li>
+            </ul>
+        </div>
+        <div class="content">
+            <h1>Lista de Tarefas</h1>
+            <div class="task-tables">
+                <table id="dayTasks">
+                    <caption>DIA</caption>
+                    <tr class="placeholder">
+                     <td>Nenhuma tarefa adicionada</td>
+                  </tr>
+                </table>
+                <table id="nightTasks">
+                    <caption>NOITE</caption>
+                    <tr class="placeholder">
+                     <td>Nenhuma tarefa adicionada</td>
+                  </tr>
+                </table>
+            </div>
+            <div class="task-controls"> 
+               <input type="text" id="taskInput" placeholder="Nova Tarefa">
+               <div class="flex">
+                  <div>
+                     <button onclick="addTask('day')">Adicionar ao Dia</button> 
+                     <button onclick="addTask('night')">Adicionar à Noite</button> 
+                  </div>
+                  <div>
+                     <button onclick="showRemoveTaskOptions('day')">Remover Tarefa do Dia</button> 
+                     <button onclick="showRemoveTaskOptions('night')">Remover Tarefa da Noite</button> 
+                  </div>
+
+                  <select id="dayTaskSelect" style="display:none;">
+                     <option value="" disabled selected>Selecione uma das opções</option>
+                  </select>
+
+                  <select id="nightTaskSelect" style="display:none;"></select> 
+                  <button id="confirmRemove" style="display:none;" onclick="removeSelectedTask()">Confirmar Remoção</button> 
+               </div>
+            </div>
+         </div>
+        </div>
+    </div>
+    <script src="index.js"></script>
+</body>
+</html>
